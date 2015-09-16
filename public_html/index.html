@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang='en-GB'>
+<head>
+  <meta charset='utf-8'>
+  <title>My Progress Bar</title>
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
+  
+  <script src='js/libs/main.js'></script>
+  
+  
+</head>
+
+<body>
+  <h1>Ractive test</h1>
+
+  <!--
+       1. This is the element we'll render our Ractive to.
+  -->
+  <div id='container'>
+
+  <!--
+       2. You can load a template in many ways. For convenience, we'll include it in
+       a script tag so that we don't need to mess around with AJAX or multiline strings.
+       Note that we've set the type attribute to 'text/ractive' - though it can be
+       just about anything except 'text/javascript'
+  -->
+  <script id='template' type='text/ractive1'>
+    <div class="col-sm-8">
+    <div class="progress" >
+        <div class="progress-bar {{barstyles[0]}}" role="progressbar" aria-valuenow={{w1}} aria-valuemin={{pgbarmin}} aria-valuemax={{pgbarmax}} style="width:{{wa[0]}}%;">
+            <span class="show">{{wa[0]}}%</span>
+        </div>
+    </div>    
+    <div class="progress"> 
+        <div class="progress-bar {{barstyles[1]}}" role="progressbar" aria-valuenow={{w2}} aria-valuemin={{pgbarmin}} aria-valuemax={{pgbarmax}}
+             aria-valuemax={{pgbarmax}} style="width: {{wa[1]}}%;">
+            <span class="show">{{wa[1]}}%</span>
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar {{barstyles[2]}}" role="progressbar" aria-valuenow={{w3}} aria-valuemin={{pgbarmin}} aria-valuemax={{pgbarmax}}
+             aria-valuemax={{pgbarmax}} style="width: {{wa[2]}}%;">
+            <span class="show">{{wa[2]}}%</span>
+        </div>
+    </div>
+
+
+<br>
+<select name="progbarlist" form="progform" id="prgbarlist">
+  <option value="prg1">Progress Bar 1</option>
+  <option value="prg2">Progress Bar 2</option>
+  <option value="prg3">Progress Bar 3</option>
+</select>
+
+<button type="submit" id=  "minus_25" class="btn btn-default" onclick="$.updPrgBar(-25)">-25</button>
+<button type="submit" id = "minus_10" class="btn btn-default" onclick="$.updPrgBar(-10)">-10</button>
+<button type="submit" id = "plus_10"  class="btn btn-default" onclick="$.updPrgBar(10)" >10</button>
+<button type="submit" id = "plus_25"  class="btn btn-default" onclick="$.updPrgBar(25)" >25</button>
+</div>
+
+
+  </script>
+  
+  
+
+
+  
+</div>
+  
+  
+  
+  
+</body>
+</html>
